@@ -1,0 +1,12 @@
+django
+pillow
+gunicorn
+psycopg2-binary
+whitenoise
+localflavor
+crispy_forms
+crispy_bootstrap4
+django_filters
+
+#user-sahil@07
+#password- Sanif@771
