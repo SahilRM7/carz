@@ -146,7 +146,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL ='/media/'
+MEDIA_URL ='/staticfiles/media/'
 
 #Crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
