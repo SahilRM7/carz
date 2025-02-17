@@ -12,16 +12,17 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 import environ # type: ignore
 from pathlib import Path
+import dj_database_url
 
 from django.contrib.messages import constants as messages
-
-# Intialize Environ
-env = environ.Env()
-env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Intialize Environ
+env = environ.Env()
+env.read_env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -30,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kxh=2reukh8*obz=paf7hj!ups&f&ro*=#iw&ug_*^t=($^ck7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -86,13 +87,27 @@ WSGI_APPLICATION = 'AutoMax.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://postgres:gPMWsXrhSkrrjjvXSgGwWlGuvKJrLRBW@switchback.proxy.rlwy.net:20398/railway'  # Optional fallback for local testing
+    )
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'CLIENT': {
+#             'host': 'mongodb+srv://sahil:sahil0771@mern.k9dxgrh.mongodb.net/?retryWrites=true&w=majority&appName=mern', 
+#             'port': 27017,               # Replace with your MongoDB port if different
+#             'username': 'sahil', # Replace with your MongoDB username (optional)
+#             'password': 'sahil0771', # Replace with your MongoDB password (optional)
+#             'authSource': 'admin', # Replace with your MongoDB authentication database (optional)
+#         },
+#         'NAME': 'carz',
+#     }
+# }
 
 
 # Password validation
