@@ -94,23 +94,6 @@ DATABASES = {
     }
 }
 
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'CLIENT': {
-#             'host': 'mongodb+srv://sahil:sahil0771@mern.k9dxgrh.mongodb.net/?retryWrites=true&w=majority&appName=mern', 
-#             'port': 27017,               # Replace with your MongoDB port if different
-#             'username': 'sahil', # Replace with your MongoDB username (optional)
-#             'password': 'sahil0771', # Replace with your MongoDB password (optional)
-#             'authSource': 'admin', # Replace with your MongoDB authentication database (optional)
-#         },
-#         'NAME': 'carz',
-#     }
-# }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
